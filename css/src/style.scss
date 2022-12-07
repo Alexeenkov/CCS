@@ -1,6 +1,52 @@
-$color-grey: #939393;
+// -------------------variables------------------
+$accent-color: #3E9CDC;
+// -------------------fonts------------------
 
-/* ! -------------------reset-styles------------------ */
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Regular.woff2') format('woff2'),
+    url('../fonts/Lato-Regular.woff') format('woff'),
+    url('../fonts/Lato-Regular.ttf') format('truetype'),
+    url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Semibold.woff2') format('woff2'),
+    url('../fonts/Lato-Semibold.woff') format('woff'),
+    url('../fonts/Lato-Semibold.ttf') format('truetype'),
+    url('../fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype');
+  font-weight: 600;
+  font-style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  url('../fonts/Lato-Bold.woff2') format('woff2'),
+    url('../fonts/Lato-Bold.woff') format('woff'),
+    url('../fonts/Lato-Bold.ttf') format('truetype'),
+    url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Heavy.woff2') format('woff2'),
+    url('../fonts/Lato-Heavy.woff') format('woff'),
+    url('../fonts/Lato-Heavy.ttf') format('truetype'),
+    url('../fonts/Lato-Heavy.eot?#iefix') format('embedded-opentype');
+  font-weight: 900;
+  font-style: normal;
+  display: swap;
+}
+
+// -------------------reset-styles------------------
 
 * {
   margin: 0;
@@ -55,14 +101,11 @@ h6 {
 /* ! ------------------------body-------------------- */
 
 body {
-  font-family: 'Poppins', 'Arial', 'Helvetica', sans-serif;
+  font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
   color: #000;
   min-width: 320px;
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: 400;
   font-style: normal;
-  line-height: 20px;
-  letter-spacing: 1px;
   overflow-x: hidden;
 }
 
@@ -80,4 +123,3 @@ html.lock {
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
 }
-
