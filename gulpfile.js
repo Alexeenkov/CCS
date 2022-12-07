@@ -7,6 +7,7 @@ const plumber = require("gulp-plumber");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
 const rename = require("gulp-rename");
+const webp = require('gulp-webp');
 
 let changeDirToParent = function (file) {
   file.dirname = file.dirname.split("/").slice(0, -1).join("/");
@@ -55,6 +56,20 @@ let commonJs = function () {
     .pipe(gulp.dest((file) => file.base));
 };
 
+let commonWebpJpg = function () {
+  return gulp
+    .src('img/*.jpg')
+    .pipe(webp())
+    .pipe(gulp.dest('img/webp'));
+}
+
+let commonWebpPng = function () {
+  return gulp
+    .src('img/*.png')
+    .pipe(webp())
+    .pipe(gulp.dest('img/webp'));
+}
+
 gulp.task("commonScss", commonScss);
 gulp.task("commonJs", commonJs);
 
@@ -65,9 +80,7 @@ let watch = function () {
 
 gulp.task("watch", watch);
 
-gulp.task(
-  "build",
-  gulp.series(gulp.parallel(commonScss, commonJs))
+gulp.task("build", gulp.series(gulp.parallel(commonScss, commonJs, commonWebpJpg, commonWebpPng))
 );
 
 gulp.task("default", gulp.series("build", "watch"));
