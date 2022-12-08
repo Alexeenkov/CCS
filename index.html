@@ -2,56 +2,83 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ! favicon -->
-  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <!-- Предзагрузка шрифта -->
-  <link rel="preload" href="fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <!-- Подключение файлов CSS -->
-  <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- ! favicon -->
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Предзагрузка шрифта -->
+	<link rel="preload" href="fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Подключение файлов CSS -->
+	<link rel="stylesheet" href="css/style.css">
 
-  <title>Алексеенков Илья - тестовое задание</title>
+	<title>Алексеенков Илья - тестовое задание</title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__wrapper wrapper">
-      <div class="header__logo">
-        <a href="./index.html">
-          <img src="img/svg/logo.svg" alt="Логотип компании LoremIpsum.Net" title="Компания LoremIpsum.Net">
-        </a>
-      </div>
-      <ul class="header__menu menu">
-        <li class="menu__item">
-          <a href="#0" class="menu__link">
-            Бизнес
-          </a>
-        </li>
-        <li class="menu__item">
-          <a href="#0" class="menu__link">
-            О нас
-          </a>
-        </li>
-        <li class="menu__item">
-          <a href="#0" class="menu__link">
-            Цены
-          </a>
-        </li>
-        <li class="menu__item">
-          <a href="#0" class="menu__link">
-            Оформить заказ
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
+	<header class="header">
+		<div class="header__wrapper wrapper">
+			<div class="header__logo">
+				<a href="./index.html">
+					<img src="img/svg/logo.svg" alt="Логотип компании LoremIpsum.Net" title="Компания LoremIpsum.Net">
+				</a>
+			</div>
+			<ul class="header__menu menu">
+				<li class="menu__item">
+					<a href="#0" class="menu__link">
+						Бизнес
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#0" class="menu__link">
+						О нас
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#0" class="menu__link">
+						Цены
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#0" class="menu__link">
+						Оформить заказ
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<section class="start-screen">
+		<picture class="start-screen__img">
+			<source media="(min-width: 1366px)" type="image/webp" srcset="img/webp/start-screen_dekstop-2x.webp 2x">
+			<source media="(min-width: 1366px)" type="image/jpg" srcset="img/start-screen_dekstop-2x.jpg 2x">
+			<source media="(min-width: 1366px)" type="image/webp" srcset="img/webp/start-screen_dekstop.webp">
+			<source media="(min-width: 1366px)" type="image/jpg" srcset="img/start-screen_dekstop.jpg">
+			<img src="img/start-screen_dekstop.jpg" alt="Lorem ipsum dolor sit amet consectetur adipiscing">
+		</picture>
+		<div class="start-screen__content">
+			<h1 class="start-screen__title">
+				<span> Lorem ipsum </span> dolor sit ametconsectetur <span> adipiscing </span>
+			</h1>
+			<div class="start-screen__description">
+				<h3 class="start-screen__subtitle"> At vero eos et accusamus et iusto odio dignissimos ducimus! </h3>
+				<ul class="start-screen__list">
+					<li class="start-screen__item"> Totam rem aperiam eaque ipsa </li>
+					<li class="start-screen__item"> Sit voluptatem accusantium doloremque laudantium </li>
+					<li class="start-screen__item"> Sed ut perspiciatis, unde omnis iste natus error </li>
+				</ul>
+			</div>
+			<div class="start-screen__buttons">
+				<button type="button" class="button start-screen__button accent-button"> Заказать </button>
+				<button type="button" class="button start-screen__button simply-button"> Подробнее </button>
+			</div>
+		</div>
+	</section>
 </body>
 
 </html>
