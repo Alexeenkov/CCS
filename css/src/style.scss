@@ -1,5 +1,6 @@
 // -------------------variables------------------
 $accent-color: #3E9CDC;
+$menu-hover-color: #43ABF0;
 // -------------------fonts------------------
 
 @font-face {
@@ -26,7 +27,7 @@ $accent-color: #3E9CDC;
 
 @font-face {
   font-family: 'Lato';
-  src:  url('../fonts/Lato-Bold.woff2') format('woff2'),
+  src: url('../fonts/Lato-Bold.woff2') format('woff2'),
     url('../fonts/Lato-Bold.woff') format('woff'),
     url('../fonts/Lato-Bold.ttf') format('truetype'),
     url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype');
@@ -122,4 +123,76 @@ html.lock {
   width: 1px;
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #10101D, $alpha: 0.9);
+  padding: 15px 0;
+  min-height: 100px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 30px;
+    max-width: 250px;
+    height: 35px;
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__menu {}
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+
+  &__item {
+    margin-right: 60px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 13px;
+    font-weight: 600;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 0;
+    transition: .3s;
+    &:hover {
+      color: $menu-hover-color;
+    }
+  }
 }
