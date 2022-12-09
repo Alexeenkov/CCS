@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    'use strict'
     addDotsBetweenStepsIcons();
+
     window.addEventListener('resize', () => {
         removeAllDots();
         addDotsBetweenStepsIcons();

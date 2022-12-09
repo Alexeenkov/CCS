@@ -194,7 +194,7 @@ html.lock {
   &__link {
     display: block;
     padding: 10px 0;
-    transition: .3s;
+    transition: .2s;
 
     &:hover {
       color: $menu-hover-color;
@@ -205,10 +205,7 @@ html.lock {
 .start-screen {
   position: relative;
   width: 100%;
-  max-height: 850px;
   padding: 10.5% 0;
-
-
 
   &__wrapper {}
 
@@ -220,6 +217,8 @@ html.lock {
     bottom: 0;
     width: 100%;
     height: 100%;
+    background-color: #93928e;
+    pointer-events: none;
 
     img {
       object-fit: cover;
@@ -337,20 +336,29 @@ html.lock {
   line-height: inherit;
   font-family: inherit;
   font-weight: inherit;
-  padding: 15px;
+  padding: 15.2px;
   min-width: 183px;
+  transition: .2s;
 }
 
 .accent-button {
   color: #fff;
   background-color: $accent-color;
   border: 1px solid #fff;
+  &:hover {
+    background-color: #43ABF0;
+  }
 }
 
 .simply-button {
   color: #2A2B30;
   background-color: #fff;
   border: 1px solid #6F6D7B;
+  &:hover {
+    color: #fff;
+    background-color: #43ABF0;
+    border-color: #43ABF0;
+  }
 }
 
 .order {
@@ -382,14 +390,39 @@ html.lock {
     color: #BBBBBB;
   }
 
-  &__steps {}
+  &__steps {
+    margin-bottom: 6.84%;
+  }
 }
 
 .wrapper {}
 
 .steps {
-  display: flex;
-  justify-content: space-between;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $accent-color $accent-color;
+
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #3D4050;
+    border: 0;
+    border-radius: 15px;
+    margin: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent-color;
+    border-radius: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    min-width: 1170px;
+  }
 
   &__step {
     display: flex;
@@ -409,7 +442,7 @@ html.lock {
     background-color: $accent-color;
     border: 5px solid #286690;
   }
-  
+
   &__dots {
     position: absolute;
     top: 50%;
@@ -461,5 +494,422 @@ html.lock {
     margin-top: 20px;
     color: #fff;
     text-align: center;
+  }
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  background-color: #bebec2;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: #272733;
+  font-size: 18px;
+  transition: .2s;
+
+  &::-webkit-input-placeholder {
+    color: #272733;
+  }
+
+  &::-moz-placeholder {
+    color: #272733;
+  }
+
+  /* Firefox 19+ */
+  &:-moz-placeholder {
+    color: #272733;
+  }
+
+  /* Firefox 18- */
+  &:-ms-input-placeholder {
+    color: #272733;
+  }
+}
+
+input.field:focus {
+  border: 1px solid $accent-color;
+  background-color: #fff;
+}
+
+.form {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    display: block;
+    height: 48px;
+    width: 31.62%;
+    max-width: 370px;
+    margin-bottom: 2.56%;
+
+    &--2x {
+      width: 65.81%;
+      max-width: 770px;
+    }
+  }
+
+  &__file {
+    .button {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      border: 2px solid $accent-color;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      transition: .2s;
+
+      &:hover {
+        color: #fff;
+        background-color: $accent-color;
+
+        svg {
+          fill: #fff;
+        }
+      }
+
+      &__remove {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fill: red;
+        margin-left: 10px;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      &._success {
+        cursor: auto;
+
+        .button__remove {
+          pointer-events: all;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:hover {
+          color: #000;
+          background-color: #fff;
+
+          svg {
+            fill: #000;
+          }
+
+          .button__remove svg {
+            fill: red;
+          }
+        }
+      }
+
+      span,
+      svg {
+        pointer-events: none;
+      }
+
+      span {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      svg {
+        width: 17px;
+        height: 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        transition: .2s;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 370px;
+  }
+}
+
+.range {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+
+  &__value {
+    color: rgba($color: #fff, $alpha: 0.85);
+    font-weight: 600;
+  }
+
+  &__input {
+    position: relative;
+    top: 3px;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    // ! Скрываем стандартный ползунок:
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Скрывает слайдер, чтобы можно было создать свой */
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      /* Скрывает слайдер, чтобы можно было создать свой */
+      appearance: none;
+    }
+
+    &:focus {
+      /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */
+      outline: none;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    // ! Кругляшок:
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 23.7px;
+      width: 23.7px;
+      border-radius: 50%;
+      border: 3px solid #286690;
+      background: #42A9ED;
+      cursor: pointer;
+      /* Нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
+      margin-top: -11px;
+      transition: .2s;
+    }
+
+    &::-moz-range-thumb {
+      height: 23.7px;
+      width: 23.7px;
+      border-radius: 50%;
+      background: #42A9ED;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    &::-ms-thumb {
+      height: 23.7px;
+      width: 23.7px;
+      border-radius: 50%;
+      background: #42A9ED;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    // ! Полоса:
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      border: 1px solid #fff;
+      cursor: pointer;
+      background: #bebec2;
+      border-radius: 5px;
+      transition: .2s;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      background: $accent-color;
+    }
+
+    &:focus::-webkit-slider-thumb {
+      background: $accent-color;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      background: #ffbc2a;
+      border-radius: 1.3px;
+      transition: .2s;
+    }
+
+    &::-ms-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      border-width: 16px 0;
+      color: transparent;
+      transition: .2s;
+    }
+
+    // ! Для IE 10+
+    &::-ms-fill-lower {
+      background: #ffbc2a;
+      border-radius: 2.6px;
+      transition: .2s;
+    }
+
+    &:focus::-ms-fill-lower {
+      background: #a78a07;
+    }
+
+    &::-ms-fill-upper {
+      background: #ffbc2a;
+      border: 0.2px solid #010101;
+      border-radius: 2.6px;
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      transition: .2s;
+    }
+
+    &:focus::-ms-fill-upper {
+      background: #a78a07;
+    }
+  }
+}
+
+.select {
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__field {
+    justify-content: space-between;
+    padding-right: 16px;
+    cursor: pointer;
+    transition: .2s;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__selected {
+    color: #272733;
+    font-size: 18px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 5.2px;
+      width: 8.9px;
+      transition: .2s;
+    }
+  }
+
+  &__options-wrapper {
+    position: absolute;
+    max-height: 0;
+    width: 100%;
+    padding-right: 4px;
+    background: #272733;
+    border-bottom: 1px solid #3D4050;
+    border-right: 1px solid #3D4050;
+    border-left: 1px solid #3D4050;
+    border-radius: 0 0 3px 3px;
+    color: #fff;
+    transition: all .2s linear;
+  }
+
+  &__options {
+    width: 100%;
+    max-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: $accent-color $accent-color;
+    transition: all .2s linear;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #3D4050;
+      border: 0;
+      border-radius: 15px;
+      margin: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent-color;
+      border-radius: 15px;
+      border: 3px solid $accent-color;
+    }
+  }
+
+  &__option {
+    padding: 7.5px 10px;
+    cursor: pointer;
+    transition: .2s;
+
+    &:first-child {
+      padding-top: 10px;
+    }
+
+    &:last-child {
+      padding-bottom: 10px;
+    }
+
+    &:hover {
+      color: #42A9ED;
+    }
+  }
+
+  &._active &__options-wrapper {
+    max-height: 179.5px;
+    width: 100%;
+  }
+
+  &._active &__options {
+    max-height: 175.5px;
+  }
+
+  &._active &__field {
+    background-color: #3a3c4c;
+    border: 1px solid #3a3c4c;
+    border-radius: 3px 3px 0 0;
+  }
+
+  &._active &__selected {
+    color: #fff;
+  }
+
+  &._active &__arrow {
+    fill: #fff;
+
+    svg {
+      transform: rotateZ(180deg);
+    }
+
   }
 }
