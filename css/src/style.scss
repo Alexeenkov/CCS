@@ -1,6 +1,7 @@
 // -------------------variables------------------
 $accent-color: #3E9CDC;
 $menu-hover-color: #43ABF0;
+$steps-count: 5;
 // -------------------fonts------------------
 
 @font-face {
@@ -350,4 +351,115 @@ html.lock {
   color: #2A2B30;
   background-color: #fff;
   border: 1px solid #6F6D7B;
+}
+
+.order {
+  padding-top: 6.25%;
+  padding-bottom: 7.8%;
+  background-color: #272733;
+
+  &__wrapper {}
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+
+    span {
+      color: $accent-color;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: center;
+    margin-bottom: 6.84%;
+    font-size: 18px;
+    color: #BBBBBB;
+  }
+
+  &__steps {}
+}
+
+.wrapper {}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: $accent-color;
+    border: 5px solid #286690;
+  }
+  
+  &__dots {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    svg {
+      width: 6px;
+      height: 6px;
+      fill: #C4C4C4;
+    }
+  }
+
+  &__icon {
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+    fill: #fff;
+
+    &--search {
+      width: 33.5px;
+      height: 33.5px;
+    }
+
+    &--percent {
+      width: 31px;
+      height: 31px;
+    }
+
+    &--file {
+      width: 38.3px;
+      height: 41.5px;
+    }
+
+    &--email {
+      width: 36px;
+      height: 28.3px;
+    }
+
+    &--money {
+      width: 38.5px;
+      height: 25.7px;
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+  }
 }
