@@ -197,12 +197,14 @@
 							<label for="range-input" class="range__name"> Sed ut perspiciatis, unde omnis iste natus </label>
 							<div class="range__value js-range-value">75%</div>
 						</div>
+						<label for="range-input" class="visually-hidden">Ползунок выбора значения</label>
 						<input id="range-input" type="range" class="range__input js-range-input" name="range" min="1" max="100"
 							step="1" value="75">
 					</div>
 
 					<div class="form__item form__file js-file">
-						<input type="file" name="file" class="visually-hidden js-file-input">
+						<label for="range-input" class="visually-hidden">Выбрите файл</label>
+						<input if="file" type="file" name="file" class="visually-hidden js-file-input">
 						<button type="button" class="button js-file-button">
 							<svg viewBox="0 0 18 21" xmlns="http://www.w3.org/2000/svg">
 								<path
