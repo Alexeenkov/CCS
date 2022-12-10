@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.add('_success');
                 button.removeEventListener('click', handleClickFileButton);
                 removeBtn.addEventListener('click', handlerRemoveFileBtn.bind(fileContainer, e.currentTarget, button, removeBtn));
-                button.querySelector('span').textContent = files[0]['name'];
+                button.querySelector('.js-button-text').textContent = files[0]['name'];
             }
         });
     }
@@ -36,7 +36,7 @@ function handlerRemoveFileBtn(inputFile, button, removeBtn) {
     const fileContainer = button.closest('.js-file');
     inputFile.value = '';
     button.classList.remove('_success');
-    button.querySelector('span').textContent = 'Прикрепить файл';
+    button.querySelector('.js-button-text').textContent = 'Прикрепить файл';
     removeBtn.removeEventListener('click', handlerRemoveFileBtn.bind(fileContainer, inputFile, button, removeBtn));
     setTimeout(() => {
         button.addEventListener('click', handleClickFileButton);

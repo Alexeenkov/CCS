@@ -182,8 +182,6 @@ html.lock {
     }
   }
 
-  &__menu {}
-
   @media (max-width: 810px) {
     &__burger-wrapper {
       display: block;
@@ -352,8 +350,6 @@ html.lock {
     height: 100vh;
     min-height: 600px;
   }
-
-  &__wrapper {}
 
   &__img {
     position: absolute;
@@ -943,12 +939,12 @@ input.field:focus {
         }
       }
 
-      span,
+      &__text,
       svg {
         pointer-events: none;
       }
 
-      span {
+      &__text {
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -1402,8 +1398,6 @@ input.field:focus {
       }
     }
   }
-
-  &__name {}
 }
 
 .contacts {
