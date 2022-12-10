@@ -345,6 +345,7 @@ html.lock {
   color: #fff;
   background-color: $accent-color;
   border: 1px solid #fff;
+
   &:hover {
     background-color: #43ABF0;
   }
@@ -354,6 +355,7 @@ html.lock {
   color: #2A2B30;
   background-color: #fff;
   border: 1px solid #6F6D7B;
+
   &:hover {
     color: #fff;
     background-color: #43ABF0;
@@ -362,11 +364,31 @@ html.lock {
 }
 
 .order {
+  position: relative;
   padding-top: 6.25%;
   padding-bottom: 7.8%;
   background-color: #272733;
 
-  &__wrapper {}
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    img {
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+  }
 
   &__title {
     margin-bottom: 30px;
@@ -540,6 +562,7 @@ input.field:focus {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 25px;
+
     &::after {
       content: '';
       width: 31.62%;
@@ -915,5 +938,125 @@ input.field:focus {
       transform: rotateZ(180deg);
     }
 
+  }
+}
+
+.footer {
+  background-color: #3D4050;
+  padding: 30px 0;
+  color: #fff;
+  font-size: 13px;
+
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    &>*:not(*:last-child) {
+      border-right: 1px solid #C3C3C3;
+    }
+  }
+
+  &__copyrigth {
+    display: flex;
+    align-items: center;
+    width: 30.8%;
+
+    span {
+      margin: 0 5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__payment {
+    width: 40.8%;
+  }
+
+  &__contacts {
+    // width: 28.7%;
+  }
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #C3C3C3;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    &:hover svg {
+      transform: rotateY(360deg);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      max-width: 20px;
+      max-height: 20px;
+      fill: $accent-color;
+      margin-right: 12px;
+      transition: .5s;
+    }
+
+    &--qiwi {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &--yandex {
+      svg {
+        width: 13.5px;
+        height: 17.5px;
+      }
+    }
+
+    &--webmoney {
+      svg {
+        width: 18px;
+        height: 17.8px;
+      }
+    }
+  }
+
+  &__name {}
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    transition: .2s;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    svg {
+      fill: $accent-color;
+      margin-right: 12px;
+    }
+
+    &--email {
+      svg {
+        width: 15px;
+        height: 11.8px;
+      }
+    }
+
+    &--vk {
+      svg {
+        width: 10.5px;
+        height: 13.1px;
+      }
+    }
   }
 }
