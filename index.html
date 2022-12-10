@@ -28,38 +28,50 @@
 					<img src="img/svg/logo.svg" alt="Логотип компании LoremIpsum.Net" title="Компания LoremIpsum.Net">
 				</a>
 			</div>
-			<ul class="header__menu menu">
-				<li class="menu__item">
-					<a href="#0" class="menu__link">
-						Бизнес
-					</a>
-				</li>
-				<li class="menu__item">
-					<a href="#0" class="menu__link">
-						О нас
-					</a>
-				</li>
-				<li class="menu__item">
-					<a href="#0" class="menu__link">
-						Цены
-					</a>
-				</li>
-				<li class="menu__item">
-					<a href="#0" class="menu__link">
-						Оформить заказ
-					</a>
-				</li>
-			</ul>
+			<div class="header__burger-wrapper">
+				<div class="header__burger js-burger-button">
+					<span></span>
+				</div>
+			</div>
+			<nav class="header__menu-wrapper js-burger-menu">
+				<ul class="header__menu menu">
+					<li class="menu__item">
+						<a href="#0" class="menu__link js-menu-link">
+							Бизнес
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#0" class="menu__link js-menu-link">
+							О нас
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#0" class="menu__link js-menu-link">
+							Цены
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#0" class="menu__link js-menu-link">
+							Оформить заказ
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</header>
 
 	<section class="start-screen">
 		<picture class="start-screen__img">
-			<source media="(min-width: 1366px)" type="image/webp" srcset="img/webp/start-screen_dekstop-2x.webp 2x">
-			<source media="(min-width: 1366px)" type="image/jpg" srcset="img/start-screen_dekstop-2x.jpg 2x">
-			<source media="(min-width: 1366px)" type="image/webp" srcset="img/webp/start-screen_dekstop.webp">
-			<source media="(min-width: 1366px)" type="image/jpg" srcset="img/start-screen_dekstop.jpg">
-			<img src="img/start-screen_dekstop.jpg" alt="Lorem ipsum dolor sit amet consectetur adipiscing">
+			<source media="(max-width: 499px)" type="image/webp" srcset="img/webp/start-screen_mobile.webp">
+			<source media="(max-width: 499px)" type="image/jpg" srcset="img/start-screen_mobile.jpg">
+			<source media="(min-width: 500px) and (max-width: 1023px)" type="image/webp" srcset="img/webp/start-screen.webp">
+			<source media="(min-width: 500px) and (max-width: 1023px)" type="image/jpg" srcset="img/start-screen.jpg">
+			<source media="(min-width: 1024px)" type="image/webp" srcset="img/webp/start-screen_2x.webp 2x">
+			<source media="(min-width: 1024px)" type="image/jpg" srcset="img/start-screen_2x.jpg 2x">
+			<source media="(min-width: 1024px)" type="image/webp" srcset="img/webp/start-screen.webp">
+			<source media="(min-width: 1024px)" type="image/jpg" srcset="img/start-screen.jpg">
+
+			<img src="start-screen.jpg" alt="Lorem ipsum dolor sit amet consectetur adipiscing">
 		</picture>
 		<div class="start-screen__content">
 			<h1 class="start-screen__title">
@@ -82,9 +94,11 @@
 
 	<main class="order">
 		<picture class="order__img">
-			<source media="(min-width: 1366px)" type="image/webp" srcset="img/webp/bg-map.webp">
-			<source media="(min-width: 1366px)" type="image/jpg" srcset="img/bg-map.png">
-			<img src="img/start-screen_dekstop.jpg" alt="Lorem ipsum dolor sit amet consectetur adipiscing">
+			<source media="(max-width: 499px)" type="image/webp" srcset="img/webp/bg-map_mobile.webp">
+			<source media="(max-width: 499px)" type="image/jpg" srcset="img/bg-map_mobile.jpg">
+			<source media="(min-width: 500px)" type="image/webp" srcset="img/webp/bg-map.webp">
+			<source media="(min-width: 500px)" type="image/jpg" srcset="img/bg-map.png">
+			<img src="img/bg-map.png" alt="Lorem ipsum dolor sit amet consectetur adipiscing">
 		</picture>
 		<div class="order__wrapper wrapper">
 			<h2 class="order__title">
@@ -263,10 +277,7 @@
 		</div>
 	</footer>
 
-	<script src="js/select.js"></script>
-	<script src="js/dots.js"></script>
-	<script src="js/range.js"></script>
-	<script src="js/file.js"></script>
+	<script src="js/bundle.js"></script>
 </body>
 
 </html>
