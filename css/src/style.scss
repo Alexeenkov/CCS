@@ -540,6 +540,10 @@ input.field:focus {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 25px;
+    &::after {
+      content: '';
+      width: 31.62%;
+    }
   }
 
   &__item {

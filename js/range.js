@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     'use strict'
-    const range = document.querySelector('.js-range-input');
-    const valueElem = document.querySelector('.js-range-value');
+    const ranges = document.querySelectorAll('.js-range-input');
 
-    if (!range) return;
-    range.addEventListener('input', () => {
-        valueElem.textContent = range.value + '%';
-    });
+    if (ranges.length === 0) return;
+    for (const range of ranges) {
+        range.addEventListener('input', (e) => {
+            const rangeContainer = e.target.closest('.js-range');
+            if (!rangeContainer) return;
+            const valuePublic = rangeContainer.querySelector('.js-range-value');
+            valuePublic.textContent = e.currentTarget.value + '%';
+        });
+    }
 });

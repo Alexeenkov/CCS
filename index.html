@@ -173,7 +173,16 @@
 						<input type="text" name="name" class="field" placeholder="Ваше имя" required>
 					</label>
 
-					<div class="form__item form__item--2x form__range range">
+					<div class="form__item form__item--2x form__range range js-range">
+						<div class="range__info">
+							<label for="range-input" class="range__name"> Sed ut perspiciatis, unde omnis iste natus </label>
+							<div class="range__value js-range-value">75%</div>
+						</div>
+						<input id="range-input" type="range" class="range__input js-range-input" name="range" min="1" max="100"
+							step="1" value="75">
+					</div>
+
+					<div class="form__item form__item--2x form__range range js-range">
 						<div class="range__info">
 							<label for="range-input" class="range__name"> Sed ut perspiciatis, unde omnis iste natus </label>
 							<div class="range__value js-range-value">75%</div>
