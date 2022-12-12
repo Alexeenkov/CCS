@@ -621,6 +621,10 @@ html.lock {
       font-size: 26px;
     }
 
+    @media (max-width: 345px) {
+      font-size: 22px;
+    }
+
     span {
       color: $accent-color;
     }
