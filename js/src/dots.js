@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     addDotsBetweenStepsIcons();
 
     window.addEventListener('resize', () => {
+        // При изменении размеров окна браузера удаляем все текущие точки на странице
+        // и добавляем новые с пересчитанными размерами
         removeAllDots();
         addDotsBetweenStepsIcons();
     });
 });
 
+/**
+ * Добавляет точки между пунктами оформления заказа
+ */
 function addDotsBetweenStepsIcons() {
     const steps = document.querySelectorAll('.js-step');
     const stepsCount = steps.length;
@@ -15,6 +20,8 @@ function addDotsBetweenStepsIcons() {
 
     setWidthForSteps(steps, stepsCount);
 
+    // Высчитываем расстояние между каждым из пунктов, получаем необходимое количество точек,
+    // формируем верстку и вставляем на страницу для отрисовки
     for (let i = 0; i < stepsCount; i++) {
         const step = steps[i];
         const nextStep = steps[i + 1];
@@ -34,6 +41,11 @@ function addDotsBetweenStepsIcons() {
     }
 }
 
+/**
+ * Формирует верстку блока с точками между пунктами оформления заказа
+ * @param {number} count - количество точек (сколько должно быть между пунктами)
+ * @returns {HTMLElement} - Блок с точками для вставки на страницу
+ */
 function createDots(count) {
     const dotsContainer = document.createElement('div');
     const dotElement = document.createElement('div');
@@ -50,6 +62,11 @@ function createDots(count) {
     return dotsContainer;
 }
 
+/**
+ * Указывает максимальную ширину для каждого пункта оформления заказа
+ * @param {HTMLCollection} steps - все пункты оформления заказа в блоке
+ * @param {number} count - их количество
+ */
 function setWidthForSteps(steps, count) {
     const widthStep = 82 / count;
     for (let i = 0; i < count; i++) {
@@ -57,6 +74,9 @@ function setWidthForSteps(steps, count) {
     }
 }
 
+/**
+ * Удаляет все точки между пунктами оформления заказа на странице
+ */
 function removeAllDots() {
     const dots = document.querySelectorAll('.js-step-dots');
     for (const dotContainer of dots) {

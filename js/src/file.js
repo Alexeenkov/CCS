@@ -32,6 +32,12 @@ function handleClickFileButton(e) {
     inputFile.click();
 }
 
+/**
+ * Обрабатывает клик по кнопки удаления загруженного файла
+ * @param {HTMLElement} inputFile - 
+ * @param {HTMLElement} button 
+ * @param {HTMLElement} removeBtn 
+ */
 function handlerRemoveFileBtn(inputFile, button, removeBtn) {
     const fileContainer = button.closest('.js-file');
     inputFile.value = '';
