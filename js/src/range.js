@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (ranges.length === 0) return;
     for (const range of ranges) {
+        // При изменении значении элемента с ползунком
         range.addEventListener('input', (e) => {
             const rangeContainer = e.target.closest('.js-range');
             if (!rangeContainer) return;

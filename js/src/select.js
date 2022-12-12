@@ -18,10 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/**
+ * Открывает/скрывает конкретный селект
+ * @param {HTMLElement} select - селект, который необходимо открыть/закрыть
+ */
 function toggleSelect(select) {
     select.classList.toggle('_active');
 }
 
+/**
+ * Закрывает все открытые селекты на странице
+ */
 function closeAllSelects() {
     const openedSelects = document.querySelectorAll('.js-select._active');
     if (openedSelects.length === 0) return;
@@ -30,6 +37,11 @@ function closeAllSelects() {
     }
 }
 
+/**
+ * Выбирает значение селекта, по которому кликнул пользователь и записывает в оригинальный селект
+ *
+ * @param {HTMLElement} item - пункт списка, который был выбран
+ */
 function changeItemSelect(item) {
     const selectContainer = item.closest('.js-select');
     const select = selectContainer.querySelector('select');
@@ -38,12 +50,20 @@ function changeItemSelect(item) {
     selectValue.textContent = item.textContent;
 }
 
+/**
+ * Отрисовывает кастомный селект для каждого из селектов на странице
+ * @param {HTMLCollection} selects - все селекты на странице с классом js-select
+ */
 function initSelects(selects) {
     for (const select of selects) {
         renderSelect(select);
     }
 }
 
+/**
+ * Отрисовывет кастомный селект рядом с оригинальным для кастомизации
+ * @param {HTMLElement} select - селект, который необходимо отрисовать на странице
+ */
 function renderSelect(select) {
     const selectedOption = select.querySelector('option[selected]');
     const options = select.querySelectorAll('option:not([selected])');
