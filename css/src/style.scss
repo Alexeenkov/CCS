@@ -362,7 +362,7 @@ html.lock {
     background-color: #93928e;
     pointer-events: none;
 
-    @media (max-width: 450px) {
+    @media (max-width: 499px) {
       &::after {
         content: '';
         position: absolute;
