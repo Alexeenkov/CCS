@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInputs = document.querySelectorAll('.js-file-input');
     if (fileButtons.length === 0 || fileInputs.length === 0) return;
 
+    // При клике на кнопки "Прикрепить файл" (любое количество на странице)
     for (const button of fileButtons) {
         button.addEventListener('click', handleClickFileButton);
     }
 
+    // При загрузке файла
     for (const input of fileInputs) {
         input.addEventListener('change', (e) => {
             const { files } = e.target;
@@ -25,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/**
+ * Обрабатывает клик по кнопке "Прикрепить файл"
+ * @param {Event} e - событие клика на кнопку загрузки файла 
+ * @returns 
+ */
 function handleClickFileButton(e) {
     const fileContainer = e.target.closest('.js-file');
     if (!fileContainer) return;
@@ -33,10 +40,10 @@ function handleClickFileButton(e) {
 }
 
 /**
- * Обрабатывает клик по кнопки удаления загруженного файла
- * @param {HTMLElement} inputFile - 
- * @param {HTMLElement} button 
- * @param {HTMLElement} removeBtn 
+ * Обрабатывает клик по кнопке удаления загруженного файла
+ * @param {HTMLElement} inputFile - элемент <input type="file">, соседний кнопке удаления
+ * @param {HTMLElement} button - кнопка загрузки файла, в которой кнопка удаления
+ * @param {HTMLElement} removeBtn - кнопка удаления загруженного файла, на которой срабатывает событие
  */
 function handlerRemoveFileBtn(inputFile, button, removeBtn) {
     const fileContainer = button.closest('.js-file');

@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/**
+ * Скролл до блока с селектором, указанном в атрибуте [data-goto] ссылки, по которой кликнули
+ * @param {HTMLElement} link - ссылка, на которой сработало событие "Клик"
+ */
 function scrollToItem(link) {
     const gotoBlock = document.querySelector(link.dataset.goto);
     if (!link.dataset.goto || !gotoBlock) return;
